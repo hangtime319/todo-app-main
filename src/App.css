@@ -38,6 +38,24 @@ body,
   margin: 0;
 }
 
+.app-background {
+  background-image: var(--bg-mobile-light);
+}
+
+.dark .app-background {
+  background-image: var(--bg-mobile-dark);
+}
+
+@media (min-width: 48rem) {
+  .app-background {
+    background-image: var(--bg-desktop-light);
+  }
+
+  .dark .app-background {
+    background-image: var(--bg-desktop-dark);
+  }
+}
+
 @layer base {
   body {
     @apply bg-gray-50 text-lg;
@@ -46,4 +64,3 @@ body,
 
   
 }
-
