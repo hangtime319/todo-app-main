@@ -5,8 +5,8 @@ Aplicativo de lista de tarefas com tema claro e escuro, filtros, reordenação p
 ![Prévia do projeto](./docs/preview.png)
 <!-- TODO: adicionar um print ou GIF em docs/preview.png mostrando a troca de tema e o arrastar de tarefas -->
 
-**Demonstração:** [LINK-DO-DEPLOY](#) <!-- TODO: colocar o link do GitHub Pages -->
-**Repositório:** [LINK-DO-REPOSITORIO](#) <!-- TODO: colocar o link do GitHub -->
+**Demonstração:** [GitHub Pages](https://hangtime319.github.io/todo-app-main/)
+**Repositório:** [GitHub](https://github.com/hangtime319/todo-app-main)
 
 ---
 
@@ -105,10 +105,10 @@ public/              # imagens de fundo e ícones
 
 ```bash
 # clonar o repositório
-git clone LINK-DO-REPOSITORIO
+git clone https://github.com/hangtime319/todo-app-main
 
 # entrar na pasta
-cd todo-app
+cd todo-app-main
 
 # instalar as dependências
 npm install
