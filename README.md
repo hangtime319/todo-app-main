@@ -3,7 +3,6 @@
 Aplicativo de lista de tarefas com tema claro e escuro, filtros, reordenação por arrastar e soltar e dados salvos no navegador. Desenvolvido com React e Tailwind CSS a partir do desafio **Todo App** do [Frontend Mentor](https://www.frontendmentor.io).
 
 ![Prévia do projeto](./docs/preview.png)
-<!-- TODO: adicionar um print ou GIF em docs/preview.png mostrando a troca de tema e o arrastar de tarefas -->
 
 **Demonstração:** [GitHub Pages](https://hangtime319.github.io/todo-app-main/)
 **Repositório:** [GitHub](https://github.com/hangtime319/todo-app-main)

@@ -1,6 +1,6 @@
 const TodoTitle = () => {
   return (
-    <h1 className="text-4xl text-gray-50 font-semibold">T O D O</h1>
+    <h1 className="text-4xl text-gray-50 font-semibold tracking-[0.4em]">TODO</h1>
   )
 }
 

@@ -2,11 +2,11 @@ import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 
 const TodoItem = ({ task, deleteTask, checkTask }) => {
-  const { listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id: task.id });
+  const { attributes, listeners, setNodeRef, setActivatorNodeRef, transform, transition, isDragging } = useSortable({ id: task.id, attributes: { role: "listitem" } });
   const iconBaseUrl = import.meta.env.BASE_URL;
 
   return (
-    <li className="flex items-center justify-between gap-4 p-4 group bg-white dark:bg-navy-900 cursor-grab select-none" ref={setNodeRef} style={{ transform: CSS.Transform.toString(transform), transition, opacity: isDragging ? 0.5 : 1 }} {...listeners}>
+    <li className="flex items-center justify-between gap-4 p-4 group bg-white dark:bg-navy-900 cursor-grab select-none" style={{ transform: CSS.Transform.toString(transform), transition, opacity: isDragging ? 0.5 : 1 }} ref={(node) => { setNodeRef(node); setActivatorNodeRef(node); }} {...attributes} {...listeners}>
       <div className="flex items-center justify-center gap-4">
         <button
           type="button"
@@ -20,7 +20,7 @@ const TodoItem = ({ task, deleteTask, checkTask }) => {
           {task.text}
         </p>
       </div>
-      <button className="w-6 h-6 md:w-4 md:h-4 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-100 cursor-pointer md:focus-visible:opacity-100 md:focus-visible:outline-2 md:focus-visible:outline-navy-850" onClick={() => deleteTask(task.id)} aria-label={`Delete task: ${task.text}`}>
+      <button type="button" className="w-6 h-6 md:w-4 md:h-4 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-100 cursor-pointer md:focus-visible:opacity-100 md:focus-visible:outline-2 md:focus-visible:outline-navy-850" onClick={() => deleteTask(task.id)} aria-label={`Delete task: ${task.text}`}>
         <img src={`${iconBaseUrl}icon-cross.svg`} alt="" />
       </button>
     </li>

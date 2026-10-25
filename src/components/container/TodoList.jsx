@@ -1,11 +1,12 @@
 import TodoItem from "./TodoItem";
-import { DndContext, useSensor, useSensors, closestCenter, TouchSensor, MouseSensor } from "@dnd-kit/core";
-import { SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable";
+import { DndContext, useSensor, useSensors, closestCenter, TouchSensor, MouseSensor, KeyboardSensor } from "@dnd-kit/core";
+import { SortableContext, verticalListSortingStrategy, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
 
 const TodoList = ({ taskList, deleteTask, checkTask, reorderTask }) => {
   const sensorMouse = useSensor(MouseSensor, { activationConstraint: { distance: 8 } });
   const sensorTouch = useSensor(TouchSensor, { activationConstraint: { delay: 250, tolerance: 5 } });
-  const sensors = useSensors(sensorMouse, sensorTouch);
+  const sensorKeyboard = useSensor(KeyboardSensor, { coordinateGetter: sortableKeyboardCoordinates });
+  const sensors = useSensors(sensorMouse, sensorTouch, sensorKeyboard);
   const handleDragEnd = (e) => {
     if (e.over && e.active.id !== e.over.id) {
       reorderTask(e.active.id, e.over.id);
